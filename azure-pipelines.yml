@@ -18,6 +18,7 @@ stages:
   - job: Build
     displayName: Build
     pool:
+      name: MyDefaultPool
       steps:
       - task: Docker@2
         inputs:
