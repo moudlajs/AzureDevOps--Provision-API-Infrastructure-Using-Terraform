@@ -17,15 +17,15 @@ resource "azurerm_container_group" "container_group" {
   os_type				= "Linux"
 
   container {
-	  name		= "weatherforecast"
-	  image		= "dropthebeat/weatherforecast:weatherforecast"
-		cpu		= "1"
-		memory		= "1"
+	name		= "weatherforecast"
+	image		= "dropthebeat/weatherforecast:weatherforecast"
+	  cpu		= "1"
+	  memory	= "1"
 
-		ports {
-			port		= "80"
-			protocol	= "TCP"
-		}
+	  ports {
+	    port	 = "80"
+	    protocol = "TCP"
+	  }
   }
 }
 
