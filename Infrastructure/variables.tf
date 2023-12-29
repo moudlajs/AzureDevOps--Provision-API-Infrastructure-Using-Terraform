@@ -21,3 +21,8 @@ variable "storage_blob_name" {
 variable "key" {
   description = "The name of key terraform tfs state."
 }
+
+variable "imagebuild" {
+  type = string
+  description = "Docker image last build version."
+}

@@ -18,7 +18,7 @@ resource "azurerm_container_group" "container_group" {
 
   container {
 	name		= "weatherforecast"
-	image		= "dropthebeat/weatherforecast:weatherforecast"
+	image		= "dropthebeat/weatherforecast:${var.imagebuild}"
 	  cpu		= "1"
 	  memory	= "1"
 
@@ -43,10 +43,3 @@ resource "azurerm_storage_container" "storage_container" {
   storage_account_name  = azurerm_storage_account.storage_account.name
   container_access_type = "blob"
 }
-
-# resource "azurerm_storage_blob" "storage_blob" {
-#   name                   = var.storage_blob_name
-#   storage_account_name   = var.storage_account_name
-#   storage_container_name = azurerm_storage_container.storage_container.name
-#   type                   = "Block"
-# }
