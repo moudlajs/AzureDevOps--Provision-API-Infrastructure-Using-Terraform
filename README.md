@@ -1,4 +1,4 @@
-# Provision an API on Azure including the infrastructure 
+# Provision an API on Azure including the infrastructure
 
 **Technology used:** .NET 8.0, Docker, Docker Hub, Azure DevOps, Terraform and Azure
 
