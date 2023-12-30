@@ -14,10 +14,6 @@ variable "tfstate_container_name" {
   description = "The name of tfsstae fiel container."
 }
 
-variable "storage_blob_name" {
-  description = "The name of tfsstae fiel container."
-}
-
 variable "key" {
   description = "The name of key terraform tfs state."
 }
