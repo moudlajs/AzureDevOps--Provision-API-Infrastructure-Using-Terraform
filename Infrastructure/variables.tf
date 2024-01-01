@@ -6,7 +6,7 @@
 
 variable "resource_group_name" {
   type = string
-  default = "tfstate"
+  default = "weatherforecast-rg"
   description = "The name of the resource group in which all resources in this example should be created."
 }
 

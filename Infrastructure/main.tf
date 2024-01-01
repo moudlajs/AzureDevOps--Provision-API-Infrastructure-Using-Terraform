@@ -2,10 +2,15 @@
 	features {}
 }
 
+resource "azurerm_resource_group" "resource_group" {
+  name     = var.resource_group_name
+  location = var.location
+}
+
 resource "azurerm_container_group" "container_group" {
   name					= "weatherforecast-cg"
-  location				= "westeurope"
-  resource_group_name	= "tfstate"
+  location				= resource.azurerm_resource_group.resource_group.location
+  resource_group_name	= resource.azurerm_resource_group.resource_group.name
 
   ip_address_type		= "Public"
   dns_name_label		= "weatherforecast"

@@ -10,7 +10,7 @@ jobs:
     - group: ARM_VARS
     steps:
     - script: |
-        cd .\Infrastructure\remote-state
+        cd .\Infrastructure\
         terraform init -input=false
         terraform destroy -input=false -auto-approve
       name: 'RunTerraform'
