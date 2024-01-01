@@ -1,6 +1,6 @@
 ﻿variable "location" {
   type = string
-  default = "westurope"
+  default = "westeurope"
   description = "The Azure Region in which all resources in this example should be created."
 }
 
