@@ -1,0 +1,23 @@
+trigger:
+- master
+
+jobs:
+  - job: Destroy
+    displayName: 'Destroy Azure Infra Resources'
+    pool:
+      name: MyDefaultPool
+    variables: 
+    - group: ARM_VARS
+    steps:
+    - script: |
+        cd .\Infrastructure\
+        terraform init -input=false
+        terraform destroy -input=false -auto-approve
+      name: 'RunTerraform'
+      displayName: 'Terraform Destroy Resources'
+      env:         
+        ARM_CLIENT_ID: $(ARM_CLIENT_ID)
+        ARM_CLIENT_SECRET: $(ARM_CLIENT_SECRET)
+        ARM_SUBSCRIPTION_ID: $(ARM_SUBSCRIPTION_ID)
+        ARM_TENANT_ID: $(ARM_TENANT_ID)
+        TF_VAR_imagebuild: $(tag)
